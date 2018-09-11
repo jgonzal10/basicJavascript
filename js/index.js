@@ -112,14 +112,39 @@ async function doubleSalary(a,b){
     b =await doubleSalaryInOneWeek(b);
     return a + b;
 }
+async function doubleSalaryPromiseall(a,b){
+    [a,b] =  await Promise.all([doubleSalaryInOneWeek(a),doubleSalaryInOneWeek(b)]) 
+    return a + b;
+}
 
-doubleSalary(7000,20000).then(console.log)
+//doubleSalary(7000,20000).then(console.log)
+doubleSalaryPromiseall(7000,20000).then(console.log)
 
 function doubleSalaryInOneWeek(param){
     return new Promise(resolve => {
         setTimeout(resolve(param*3),3000);
     });
 }
+
+const promises =  [
+    new Promise(resolve=> resolve(1)),
+    new Promise(resolve=> resolve(2)),
+    new Promise(resolve=> resolve(3))
+];
+
+async function test1(){
+    for(const obj of promises){
+        console.log(obj)
+    }
+}
+async function test2(){
+    for await (const obj of promises){
+        console.log(obj)
+    }
+}
+
+test1()
+test2()
 
 
 
