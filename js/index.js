@@ -107,6 +107,17 @@ function getNetSalary(dev){
     })
 }
 
+async function doubleSalary(a,b){
+    a =await doubleSalaryInOneWeek(a);
+    b =await doubleSalaryInOneWeek(b);
+    return a + b;
+}
+
+function doubleSalaryInOneWeek(param){
+    return new Promise(resolve => {
+        setTimeout(resolve(param*3),3000);
+    });
+}
 
 
 
