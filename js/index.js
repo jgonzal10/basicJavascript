@@ -85,7 +85,7 @@ async function getTotalHoursWorked(developerId){
     console.log(devSalary)
 }
 
-getTotalHoursWorked('1')
+//getTotalHoursWorked('1')
 
 function getDev(developerId){
     return new Promise(resolve =>{
@@ -112,6 +112,8 @@ async function doubleSalary(a,b){
     b =await doubleSalaryInOneWeek(b);
     return a + b;
 }
+
+doubleSalary(7000,20000).then(console.log)
 
 function doubleSalaryInOneWeek(param){
     return new Promise(resolve => {
