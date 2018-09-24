@@ -487,6 +487,24 @@ function notesToObject(values){
 }
 
 var procesedData = notesToObject(reducedValues)
-console.log(procesedData)
+// console.log(procesedData)
+// console.table(procesedData)
 
+//String to array aka […]
+// let a= 'JGO IS THE BEST';
+// let b = [...a]
+// console.log(b)
 
+//Ternary Operator
+// let JGOERNS;
+// if(JGOERNS == 7000){
+//   JGOERNS = 'wants more'
+// }else{
+//   JGOERNS = 10000;
+// }
+// let JGOERNS = JGOERNS==7000 ? 'wants more' : 10000;
+
+//CONVERT ARRAY TO OBJECT
+const arrayyy = ['jennifer','einer','luz','eve']
+const obj = {...arrayyy}
+console.log(obj)
