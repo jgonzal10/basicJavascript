@@ -508,3 +508,101 @@ var procesedData = notesToObject(reducedValues)
 const arrayyy = ['jennifer','einer','luz','eve']
 const obj = {...arrayyy}
 console.log(obj)
+
+
+
+
+let arr = [1, 2, 3, 4, 5];
+// arr.forEach((num,index)=>{
+//     return arr[index] = num * 2;
+
+// })
+let doubled = arr.map(num => {
+    return num * 2;
+});
+
+
+let arr2 = arr.map(num => num * 2).filter(num => num > 5);
+console.log(arr2)
+
+data = [
+    {
+      name: 'Butters',
+      age: 3,
+      type: 'dog'
+    },
+    {
+      name: 'Lizzy',
+      age: 6,
+      type: 'dog'
+    },
+    {
+      name: 'Red',
+      age: 1,
+      type: 'cat'
+    },
+    {
+      name: 'Joey',
+      age: 3,
+      type: 'dog'
+    },
+    {
+        name: 'COSI',
+        age: 3,
+        type: 'cat'
+      },
+  ];
+
+  function getAges(data) {
+    let sum = 0;
+    for (var i = 0; i < data.length; i++){
+      if (data[i].type === 'dog'){
+        let tempAge = data[i].age;
+        sum += (tempAge * 7);
+      }
+    }
+    return sum;
+  }
+  let dogsage =  getAges(data);
+  console.log(dogsage)
+
+  //FILTER DOGS -- THEN MAP TO MULTIPLY BY 7 AND FINALLY REDUCE TO SUM ALL DOG´S AGES
+
+//   let dogsn =  data.filter((animal)=> {
+//       if(animal.type === 'dog'){
+//           console.log(animal)
+//       }
+//   })
+
+  let ages =  data.filter((animal)=>{
+      return animal.type ==='dog';
+  }).map((animal)=>{
+      return animal.age *7;
+  }).reduce((sum,animal)=>{
+      return sum + animal.age;
+  });
+  console.log(ages)
+
+
+  //Developers 
+  let developers = [
+    {name:'JENNIFER', language:'JS', salary:17000,},
+    {name:'CARLOS', language:'JS', salary:17000,},
+    {name:'MARTA', language:'Python', salary:4000,},
+    {name:'DOUGLAS', language:'COBOL', salary:9000,},
+    {name:'MARIO', language:'Python', salary:4000,},
+    {name:'JONAS', language:'JAVA', salary:10000,}
+    ]
+
+    ///USING FILTER, MAP AND REDUCE
+//FILTER JS DEVELOPERS
+
+let jsdevs = developers.filter((dev)=>{
+    return dev.language === 'JS'
+}).map((d)=>{
+    return d.salary *3;
+}).reduce((sum,d)=>{
+    return sum +d;
+})
+console.log(jsdevs)
+
